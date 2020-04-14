@@ -1,10 +1,13 @@
 
 from django.urls import path
-from .views import HomeView, EntryView, CreateEntryView
+from .views import HomeView, EntryView, CreateEntryView,YDeleteView,EditPost
+
 
 urlpatterns = [
 
     path('', HomeView.as_view(), name='blog-home'),
     path('entry/<int:pk>/', EntryView.as_view(), name="entry-detail"),
     path('create_entry/', CreateEntryView.as_view(success_url='/'), name="create_entry"),
+    path('delete/(<pk>\d+)', YDeleteView.as_view(), name="del"),
+    path('edit/<int:pk>', EditPost.as_view(), name='edit'),
 ]

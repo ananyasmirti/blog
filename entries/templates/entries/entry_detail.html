@@ -9,8 +9,24 @@
         <div class="card mb-4 mt-4">
           <div class="card-body">
             <h3 class="card-title">{{ object.entry_title}}</h3>
+            <img class="card-img" src="{{ object.img.url }}" height="300" width="800" >
             <p class="card-text">{{ object.entry_text|linebreaks}}</p>
-          </div>
+            <div class="btn btn-group ">
+            <form action="{% url 'del' object.pk %}" method="post">
+              {% csrf_token %}
+              <input type="submit"  class ="btn btn-danger" value="Delete" />
+          </form>
+
+          <form action="{% url 'edit' object.pk %}" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            
+            <input type="submit"  class ="btn btn-primary" value="Update"  />
+            
+          </form>
+        </div>
+       </div>
+          
+
           <div class="card-footer text-muted">
             Posted on {{ object.entry_date}} by
             <span class= "text-info mr-2">{{ object.entry_author}}</span>
@@ -19,3 +35,5 @@
       </div>
 
       {% endblock %}
+
+     

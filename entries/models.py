@@ -5,8 +5,9 @@ class Entry(models.Model):
     entry_title = models.CharField(max_length=50)
     entry_text = models.TextField()
     entry_date = models.DateTimeField(auto_now_add=True)
-    entry_author = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
-
+    entry_author = models.ForeignKey(User, on_delete=models.CASCADE)
+    img = models.ImageField(upload_to='uploads/',default='uploads\coffee.jpg')
+    
     class Meta:
         verbose_name_plural="entries"
 

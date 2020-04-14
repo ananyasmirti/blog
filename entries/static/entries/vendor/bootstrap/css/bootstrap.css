@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -2971,6 +2971,7 @@ fieldset:disabled a.btn {
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
+  
 }
 
 .btn-sm, .btn-group-sm > .btn {
@@ -3368,10 +3369,18 @@ input[type="button"].btn-block {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
+.btn-group  {
+  
+  
+ 
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
 
 .btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
+  
 }
 
 .btn-group-vertical {
