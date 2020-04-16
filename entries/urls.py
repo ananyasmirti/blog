@@ -10,4 +10,5 @@ urlpatterns = [
     path('create_entry/', CreateEntryView.as_view(success_url='/'), name="create_entry"),
     path('delete/(<pk>\d+)', YDeleteView.as_view(), name="del"),
     path('edit/<int:pk>', EditPost.as_view(), name='edit'),
+    
 ]
