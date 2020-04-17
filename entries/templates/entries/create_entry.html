@@ -1,5 +1,5 @@
 {% extends "entries/base.html" %}
-
+{% load static%}
 {% block content %}
       <div class="col-md-8">
         <div class="card mb-4 mt-4">
@@ -7,15 +7,29 @@
         Create Blog Post
           </div>
           <div class="card-body">
-            <form method = "POST" enctype="multipart/form-data"> 
-               {% csrf_token %}
-
-                 {{form.as_p}}
-
-                <button type ="submit" class ="btn btn-primary"> Post Entry </button>
-            </form>
+           
+            <head>
+              <script src="{% static 'entries/js/tinymce/tinymce.min.js' %}"></script>
+              <script type="text/javascript" src="{% static 'entries/js/tinymce/custom.js' %}" ></script>
+              <script src="{% static 'entries/js/tinymce/jquery.tinymce.min.js' %}"></script>
+            </head>
+            <body>
+              <form method = "POST" enctype="multipart/form-data"> 
+                {% csrf_token %}
+          
+                  {{form.as_p}}
+          
+                 <button type ="submit" class ="btn btn-primary"> Post Entry </button>
+             </form>
+  
+               
+            </body>
+            
+            
+            
           </div>
         </div>
       </div> 
 
       {% endblock %}
+      
