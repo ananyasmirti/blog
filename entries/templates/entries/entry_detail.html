@@ -10,11 +10,13 @@
           <div class="card-body">
             <h3 class="card-title">{{ object.entry_title}}</h3>
             <img class="card-img" src="{{ object.img.url }}" height="300" width="800" >
-            <p class="card-text">{{ object.entry_text|linebreaks}}</p>
+            <p class="card-text">{{ object.entry_text | safe }}</p>
+            <hr></hr>
             <div class="btn btn-group ">
             <form action="{% url 'del' object.pk %}" method="post">
               {% csrf_token %}
               <input type="submit"  class ="btn btn-danger" value="Delete" />
+
           </form>
 
           <form action="{% url 'edit' object.pk %}" method="post">{% csrf_token %}
