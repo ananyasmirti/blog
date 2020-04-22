@@ -4,6 +4,13 @@
 
       <!-- Blog Entries Column -->
       <div class="col-md-8">
+        
+        {% if messages %}
+    {% for message in messages %}
+        <div class="card-footer text-muted">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+
         {% for entry in blog_entries %}
         <!-- Blog Post -->
         <div class="card mb-4 mt-4">
